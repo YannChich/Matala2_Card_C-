@@ -23,6 +23,7 @@ public:
     void set_type(string type){ this->type = type; }
     void set_numCard(unsigned int value){ this->num_card = value; }
     string toString(); // Print the card 
+    bool compareTo(Card card); // Compare between two cards
 
     };
 }

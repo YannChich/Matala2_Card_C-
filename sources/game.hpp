@@ -17,10 +17,11 @@ private:
     vector<Card> Deck; // the deck of 52 cards for the game
     Player& p1; // reference for the first Player
     Player& p2; // reference for the second Player
+    int round; // the current round
 
 public:
     //Constructor outline
-    Game(Player& pl1,Player& pl2): p1(pl1), p2(pl2){}
+    Game(Player& pl1,Player& pl2);
     void playTurn(); // play one turn 
     void printLastTurn(); // print the last turn stats
     void playAll(); // play the game until the end

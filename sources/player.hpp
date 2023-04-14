@@ -21,18 +21,29 @@ private:
 
 public:
     //Constructor to create a player , inline Constructor 
-    Player(string  name) : name(name){
-        this->win_rate = 0;
-        this->draw_rate = 0;
-    };
+    Player(string  name);
+
     // function for Player
-    int stacksize(){ return cards.size();} //prints the amount of cards left.
-    int cardesTaken(){ return Wining_Card.size();} // prints the amount of cards this player has won.
-    string getName(){ return this->name; } // getter for the name
-    string Stat_Player() const { string stats = "Win rate: " + to_string(this->win_rate) + "; Draw rate: " + to_string(this->draw_rate);
-    return stats; }// print the stats of the player (win rate and draw rate ...)
 
+    int stacksize() const { return cards.size();} //prints the amount of cards left.
 
+    int cardesTaken() const { return Wining_Card.size();} // prints the amount of cards this player has won.
+
+    string getName() const { return this->name; } // getter for the name
+
+    // Function to print the win rate and draw rate of the player
+    string Stat_Player() const { 
+        string stats = "Win rate: " + to_string(this->win_rate) + "; Draw rate: " + to_string(this->draw_rate);
+        return stats; 
+    }
+
+    void addCard(Card& card); // add a card to the player stack
+
+    void addWiningCard(Card& card); // add a card to the player wining card
+
+    void addWinRate(){ this->win_rate++; } // add 1 to the win rate
+
+    void addDrawRate(){ this->draw_rate++; } // add 1 to the draw rate
 
     };
 }
