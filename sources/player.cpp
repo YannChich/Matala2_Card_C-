@@ -14,4 +14,13 @@ namespace ariel {
     void Player::addWiningCard(Card& card){
         Wining_Card.push_back(card);
     }
+
+    // Function popCard to pop a card from the player stack
+    Card Player::popCard(){
+        Card card = cards.back();
+        cards.pop_back();
+        return card;
+    }
+
+    
 }

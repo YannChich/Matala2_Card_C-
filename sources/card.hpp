@@ -17,13 +17,12 @@ private:
 public:
     //Constructor to create card , inline
     Card(unsigned int num_card, string type);
-
     unsigned int get_NumCard() const { return this->num_card;} // Getter for the value of the card
     string get_Type(){ return this->type;} // Getter for the type of the card
-    void set_type(string type){ this->type = type; }
+    void set_type(const string& type){ this->type = type; }
     void set_numCard(unsigned int value){ this->num_card = value; }
     string toString(); // Print the card 
-    bool compareTo(Card card); // Compare between two cards
+    int compareTo(Card card); // Compare between two cards
 
     };
 }

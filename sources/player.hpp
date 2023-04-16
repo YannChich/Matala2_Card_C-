@@ -25,9 +25,9 @@ public:
 
     // function for Player
 
-    int stacksize() const { return cards.size();} //prints the amount of cards left.
+    size_t stacksize() const { return cards.size();} //prints the amount of cards left.
 
-    int cardesTaken() const { return Wining_Card.size();} // prints the amount of cards this player has won.
+    size_t cardesTaken() const { return Wining_Card.size();} // prints the amount of cards this player has won.
 
     string getName() const { return this->name; } // getter for the name
 
@@ -44,6 +44,12 @@ public:
     void addWinRate(){ this->win_rate++; } // add 1 to the win rate
 
     void addDrawRate(){ this->draw_rate++; } // add 1 to the draw rate
+
+    int Get_WinRate() const { return this->win_rate; } // get the win rate
+
+    int Get_DrawRate() const { return this->draw_rate; } // get the draw rate
+
+    Card popCard(); // pop a card from the player stack
 
     };
 }

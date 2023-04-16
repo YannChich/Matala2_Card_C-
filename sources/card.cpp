@@ -41,12 +41,26 @@ string Card::toString() {
     return card;
  }
 
-bool Card::compareTo(Card card) {
+int Card::compareTo(Card card) {
     // 2 win the AS = 14
+    // if this card is 2 and the other is AS return -1
     if (this->num_card == 2 && card.get_NumCard() == 14) {
-        return true;
+        return -1;
     }
-    return this->num_card < card.get_NumCard();
+    // if this card is AS and the other is 2 return 1
+    else if (this->num_card == 14 && card.get_NumCard() == 2) {
+        return -2;
+    }
+    // if this card is smaller than the other then the function return 0
+    else if (this->num_card < card.get_NumCard()) {
+        return 2;
+    }
+    // if this card is bigger than the other then the function return 1
+    else if (this->num_card > card.get_NumCard()) {
+        return 1;
+    }
+
+    return 0;
  }
 
 
