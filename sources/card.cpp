@@ -1,5 +1,4 @@
 #include "card.hpp"
-#include <stdexcept>
 using namespace std;
 
 namespace ariel {

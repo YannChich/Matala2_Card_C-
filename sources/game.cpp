@@ -1,6 +1,3 @@
-#include <iostream>
-#include <algorithm>
-#include <vector>
 #include "game.hpp"
 
 using namespace std;
@@ -16,7 +13,9 @@ namespace ariel{
             Deck.push_back(Card(i, "Club"));
         }
         // Randomize the deck
-        random_shuffle(Deck.begin(), Deck.end()); // Help with Internet to do this https://cplusplus.com/forum/beginner/234369/
+        random_device rd;
+        mt19937 g(rd());
+        shuffle(Deck.begin(), Deck.end(), g); // Help with Internet to do this https://cplusplus.com/forum/beginner/278929/
         // Give the cards to the players
         for (unsigned int i = 0; i < 26; i++) {
             p1.addCard(Deck[i]);

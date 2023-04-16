@@ -1,7 +1,7 @@
 #pragma once
-
 #include <iostream>
 #include <string>
+#include <random>
 #include <vector>
 #include "player.hpp"
 #include "card.hpp"
